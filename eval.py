@@ -1,6 +1,8 @@
 import argparse
 import pandas as pd
 import string
+from collections import defaultdict
+from sklearn.metrics import confusion_matrix
 
 def post_proc_s2a(preds, data_name):
     extracted = []
@@ -49,13 +51,18 @@ def accuracy(preds, targets, exact_match=False, first_word=False, isin=False, co
                 correct +=1
     
     elif comps:
+        counts = defaultdict(int)
+        preds = [pred.strip().split()[0] for pred in preds]
+        tn, fp, fn, tp = confusion_matrix(targets, preds).ravel()
+        print((tn, fp, fn, tp))
         for pred, target in zip(preds, targets):
-            '''split_string = 'Final answer (true or false):'
-            assert split_string in pred
-
-            pred = pred.split(split_string)[-1].strip()'''
-            if target in pred.split():
+            if pred == target:
                 correct += 1
+                counts[f"{target} true"] += 1
+            elif pred in ['A', 'B']:
+                counts[f"{target} false"] += 1
+        
+        return round(correct/total, 2), counts
 
     return round(correct/total, 2)
 
@@ -65,6 +72,7 @@ def main():
     parser.add_argument('--subset', type=str, required=False, choices=['oracle', 'oracle_baseline', 'multiSem', 'multiNeutral', 'singleSem', 'singleNeutral', 'inBetween', 'before'], help='Data subset to evaluate')
     parser.add_argument('--model', type=str, required=False, choices=['llama2-13', 'llama2-70', 'mistral-v2', 'gemma-7b-it'], help='Model for evaluation')
     parser.add_argument('--abs_path', type=str, required=False)
+    parser.add_argument('--num_classes', action="store_true", required=False, help='COMPS only: select whether you want to return the number of predictions per class')
 
     args = parser.parse_args()
     print(args)
@@ -73,6 +81,7 @@ def main():
     subset = args.subset
     model = args.model
     file_path = args.abs_path
+    num_classes = args.num_classes
 
     if not isinstance(file_path, str):
         file_path = f"eval/{dataset}_{subset}_{model}.csv"
@@ -98,9 +107,15 @@ def main():
         print(f"Is-in Accuracy:\t\t{acc_isin} \nExact Match Accuracy:\t{acc_em} \nFirst Word Accuracy:\t{acc_fw}")
     
     if dataset == 'comps':
-        acc = accuracy(preds, targets, comps=True)        
+        acc, counts = accuracy(preds, targets, comps=True)
+        if num_classes:
+            print(f"\t\tA\t|\tB")
+            print(f"Actual N\t{targets.count('A')}\t|\t{targets.count('B')}")
+            print(f"Pred. true\t{counts['A true']}\t|\t{counts['B true']}")
+            print(f"Pred. false\t{counts['A false']}\t|\t{counts['B false']}")
+            print("-------------------------------------")
         
-    print(f"Accuracy:\t{acc}")
+    #print(f"Accuracy:\t{acc}")
 
 if __name__ == '__main__':
     main()

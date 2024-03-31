@@ -108,17 +108,18 @@ def preprocess(inputs, tokenizer, model_name, system_prompt, comps=False, prem_h
 
     if comps and prem_hyp:
         #inputs = [sent[0].split("Therefore,") for sent in inputs]
-        inputs = [[sent_acc.split("Therefore,"), sent_unacc.split("Therefore,")] for sent_acc, sent_unacc in zip(inputs[0], inputs[1])]
+        inputs = [[sent_acc.split("Therefore,"), sent_unacc.split("Therefore,")] for sent_acc, sent_unacc in inputs]#zip(inputs[0], inputs[1])]
         #inputs = ["\nPremise: " + " ".join(sent[:-1]) + "\nHypothesis: " + sent[-1].strip().capitalize() + "\nOne-word response (True or False): " for sent in inputs]
         #answers = "\n\nPlease select one of the following options:\nA: Premise 1 \nB: Premise 2 \nC: Uncertain \n\nReply with the single letter corresponding to your choice."
         #inputs = ["\nHypothesis: " + sent[0][-1].strip().capitalize() + "\n\nPlease, select one of the following options: \nA: " + " ".join(sent[1][:-1]) + "\nB: " + " ".join(sent[0][:-1]) + "\nC: Uncertain" + "\n\nOne-letter Response: " for sent in inputs]
         #inputs = ["Hypothesis: " + sent[0][-1].strip().capitalize() +"\nPremise 1: " + " ".join(sent[0][:-1]) + "\nPremise 2: " + " ".join(sent[1][:-1]) + "\n\nRespond by completing the following sentence with one single digit. Only give the digit as your answer!\nAnswer: The hypothesis above logically follows from Premise " for sent in inputs]
-        inputs = ["Hypothesis: " + sent[0][-1].strip().capitalize() +"\nA: " + " ".join(sent[1][:-1]) + "\nB: " + " ".join(sent[0][:-1]) + "\n\nRespond with either 'A' or 'B' as your answer. Answer:" for sent in inputs]
+        inputs = ["\nA: " + " ".join(sent[1][:-1]) + "\nB: " + " ".join(sent[0][:-1]) + "\nHypothesis: " + sent[0][-1].strip().capitalize() + "\n\nJust generate a single letter 'A' or 'B': " for sent in inputs]
 
         #print(inputs[0])
     
     if comps and not prem_hyp: 
-        inputs = ["A: " + sent_1 + "\nB: " + sent_2 + "\n\nRespond with either 'A' or 'B' as your answer. Answer: " for sent_1, sent_2 in inputs]
+        # llama: Just respond with 'A' or 'B' as your answer. Answer:
+        inputs = ["A: " + sent_1 + "\nB: " + sent_2 + "\n\nJust generate a single letter 'A' or 'B' as your answer:" for sent_1, sent_2 in inputs]
 
     if 'llama' in model_name:
         def get_template_llama(prompt):
@@ -134,12 +135,12 @@ def preprocess(inputs, tokenizer, model_name, system_prompt, comps=False, prem_h
     else:
         def get_template(prompt):
             chat = [
-            {"role": "user", "content": system_prompt + prompt},
+            {"role": "user", "content": system_prompt + "\n" + prompt},
             ]
             return chat
 
         inputs = [tokenizer.apply_chat_template(get_template(inp), add_generation_prompt=True, tokenize=False) for inp in inputs]
-
+        print(inputs[0])
 
     model_inputs = tokenizer(inputs, padding=True, truncation=False, pad_to_multiple_of=8)
     dataset = Dataset.from_dict(model_inputs)
@@ -193,8 +194,8 @@ def load_model_acc(model_id, in_4bit=False):
 
     return model, tokenizer
         
-def load_model_hf(model_id, memory_pinning, in_4bit=False, not_quant=False):    
-    if not_quant:
+def load_model_hf(model_id, memory_pinning, in_4bit=False, no_quant=False):    
+    if no_quant:
         tokenizer = AutoTokenizer.from_pretrained(model_id, token=os.environ['HF_TOKEN'], padding_side='left') # use_fast argument
         model = AutoModelForCausalLM.from_pretrained(model_id, device_map='auto', max_memory=memory_pinning, token=os.environ['HF_TOKEN'])
 
@@ -247,7 +248,7 @@ def generate_hf(model, tokenizer, data, temperature=0.6, top_p=0.9, seed=42, N=N
             #end = torch.cuda.Event(enable_timing=True)
             #start.record()
 
-            outputs = model.generate(**batch, max_new_tokens=10, pad_token_id=tokenizer.pad_token_id, temperature=temperature, top_p=top_p, do_sample=True)
+            outputs = model.generate(**batch, max_new_tokens=100, pad_token_id=tokenizer.pad_token_id, temperature=temperature, top_p=top_p, do_sample=True)
 
             '''end.record()
             torch.cuda.synchronize()

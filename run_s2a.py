@@ -17,7 +17,7 @@ def main():
     parser.add_argument('--subset', type=str, required=True, choices=['oracle', 'multiSem', 'multiNeutral', 'singleSem', 'singleNeutral', 'inBetween', 'before', 'ic'], help='Data subset to evaluate')
     parser.add_argument('--subset_size', type=int, required=False, help='Choose subset size to evaluate')
     parser.add_argument('--model', type=str, required=True, choices=['llama2-13', 'llama2-70', 'mistral-v2', 'gemma-7b-it'], help='Model for evaluation')
-    parser.add_argument('--quant', type=str, choices=['4bit', '8bit'], help='Set quantization method')
+    parser.add_argument('--quant', type=str, choices=['4bit', '8bit', 'none'], help='Set quantization method')
     parser.add_argument('--s2a', action="store_true", required=False, default=False, help='Use s2a or not (baseline)')
     parser.add_argument('--batch_size', type=int, default=8, help='Define batch size')
     parser.add_argument('--eval_output_dir', action="store_true", help='Save the model output to a file')
@@ -122,11 +122,15 @@ def main():
     not use list.'''
 
     # ------ Run model -------
-    in_4bit = True if quant == "4bit" else False
+    if quant in ['4bit', '8bit']:
+        in_4bit = True if quant == "4bit" else False
+    if quant == 'none':
+        no_quant = True
+
     N = num_batches if isinstance(num_batches, int) else None
 
-    max_memory_mapping = {0: "0GB", 1: "30GB", 2: "0GB", 3:"30GB", 4:"0GB", 5:"0GB", 6:"0GB", 7:"0GB"}
-    model, tokenizer = s2a.load_model_hf(model_id, memory_pinning=max_memory_mapping, in_4bit=in_4bit)
+    max_memory_mapping = {0: "35GB", 1: "0GB", 2: "0GB", 3:"0GB", 4:"0GB", 5:"0GB", 6:"0GB", 7:"0GB"}
+    model, tokenizer = s2a.load_model_hf(model_id, memory_pinning=max_memory_mapping, in_4bit=in_4bit, no_quant=no_quant)
     #model.to_bettertransformer()
 
     # step 1 of s2a: separate relevant from distracting information 
