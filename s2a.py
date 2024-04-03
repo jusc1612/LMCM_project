@@ -1,5 +1,4 @@
 import os
-import replicate
 import torch
 import pandas as pd
 import string
@@ -304,7 +303,7 @@ def generate_hf(model, tokenizer, data, temperature=0.6, top_p=0.9, seed=42, N=N
 
 # ------- Replicate --------------
 
-def run_r_llama_instance(model, prompt, system_prompt, temperature=0.6, top_p=0.9):
+'''def run_r_llama_instance(model, prompt, system_prompt, temperature=0.6, top_p=0.9):
     output = replicate.run(
         model,
         input={
@@ -413,7 +412,7 @@ def run_r_gemma(prompt, model, temperature=0.7, top_p=0.95):
         )
 
     for item in output:
-        print(item, end="")
+        print(item, end="")'''
 
 # ------ might be useful ------------
 
