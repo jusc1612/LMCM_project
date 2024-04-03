@@ -47,7 +47,7 @@ def accuracy(sents, preds, targets, exact_match=False, first_word=False, isin=Fa
         if errors:
             prefix = "/local/js/lmcm_project/eval/save_preds.csv"
             prefix = "D:\Julian Schlenker\Documents\LMCM_project\eval"
-            pd.DataFrame(incorrect).to_csv(f"\{prefix}_errors_isin_{extension}.csv", index=False)
+            pd.DataFrame(incorrect).to_csv(f"{prefix}\errors_isin_{extension}.csv", index=False)
 
     if exact_match:
         for sent, pred, target in zip(sents, preds, targets):
