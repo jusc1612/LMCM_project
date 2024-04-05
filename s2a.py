@@ -21,16 +21,16 @@ accelerator = Accelerator()
 
 def load_sttn(model, ent_type, sem=True, return_dataset=False):
     if ent_type == "Multi" and sem:
-        file = pd.read_csv(f'/local/js/lmcm_project/Sorting-Through-The-Noise/data/combined_data/multiple_entity_distractor/{model}/complete_data_For_MultipleEntityObjectDistractorAccuracy{model}.csv', sep="\t")
+        file = pd.read_csv(f'../Sorting-Through-The-Noise/data/combined_data/multiple_entity_distractor/{model}/complete_data_For_MultipleEntityObjectDistractorAccuracy{model}.csv', sep="\t")
 
     elif ent_type == "Multi" and not sem:
-        file = pd.read_csv(f'/local/js/lmcm_project/Sorting-Through-The-Noise/data/combined_data/multiple_entity_with_neutral_distractor/{model}/complete_data_For_MultipleEntityObjectDistractorAccuracy{model}.csv', sep="\t")
+        file = pd.read_csv(f'../Sorting-Through-The-Noise/data/combined_data/multiple_entity_with_neutral_distractor/{model}/complete_data_For_MultipleEntityObjectDistractorAccuracy{model}.csv', sep="\t")
     
     elif ent_type == "Single" and sem:
-        file = pd.read_csv(f'/local/js/lmcm_project/Sorting-Through-The-Noise/data/combined_data/single_entity_distractor/{model}/complete_data_For_MultipleEntityObjectDistractorAccuracy{model}.csv', sep="\t")
+        file = pd.read_csv(f'../Sorting-Through-The-Noise/data/combined_data/single_entity_distractor/{model}/complete_data_For_MultipleEntityObjectDistractorAccuracy{model}.csv', sep="\t")
 
     elif ent_type == "Single" and not sem:
-        file = pd.read_csv(f'/local/js/lmcm_project/Sorting-Through-The-Noise/data/combined_data/single_entity_with_neutral_distractor/{model}/complete_data_For_MultipleEntityObjectDistractorAccuracy{model}.csv', sep="\t")
+        file = pd.read_csv(f'../Sorting-Through-The-Noise/data/combined_data/single_entity_with_neutral_distractor/{model}/complete_data_For_MultipleEntityObjectDistractorAccuracy{model}.csv', sep="\t")
 
     file['target'] = file['target_occupation']
     del file['target_occupation']
@@ -54,11 +54,11 @@ def get_zero_attractors(data1, data2):
 
 def load_comps(in_between=False, before=False, base=False, return_dataset=False):
     if in_between:
-        file = pd.read_json('/local/js/lmcm_project/comps/data/comps/comps_wugs_dist-in-between.jsonl', lines=True)
+        file = pd.read_json('../comps/data/comps/comps_wugs_dist-in-between.jsonl', lines=True)
     if before:
-        file = pd.read_json('/local/js/lmcm_project/comps/data/comps/comps_wugs_dist-before.jsonl', lines=True)
+        file = pd.read_json('../comps/data/comps/comps_wugs_dist-before.jsonl', lines=True)
     if base:
-        file = pd.read_json('/local/js/lmcm_project/comps/data/comps/comps_wugs.jsonl', lines=True)
+        file = pd.read_json('../comps/data/comps/comps_wugs.jsonl', lines=True)
     
     #sents_acc = [file['prefix_acceptable'][i] + " " + file['property_phrase'][i] for i in range(len(file))]
     #sents_inacc = [file['prefix_unacceptable'][i] + " " + file['property_phrase'][i] for i in range(len(file))]
