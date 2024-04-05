@@ -1,0 +1,49 @@
+sentence,prediction,target
+"jake has a sister , played basketball , sang in a choir , and visited the eiffel tower and has friends in peru , egypt , and russia . the country jake traveled to was",peru,France
+"rowan has a sister , played basketball , sang in a choir , and visited the machu picchu and has friends in france , india , and italy . the country rowan traveled to was",france,Peru
+"john has a sister , played basketball , sang in a choir , and visited the kremlin and has friends in peru , egypt , and france . the country john traveled to was",peru,Russia
+"Daniel played football . In his game , Daniel scored a",goal,touchdown
+"Daniel has a sister and played football . In his game , Daniel scored a",goal,touchdown
+"Daniel has a sister , went to school in France , sang in a choir , and played football . In his game , Daniel scored a",hattrick,touchdown
+"Jake has a sister , went to school in France , and played soccer . In his game , Jake scored a",hattrick,goal
+"Sebastian has a sister , went to school in France , and played football while his friend scored a goal . In his game , Sebastian scored a",hattrick,touchdown
+"Daniel has a sister , went to school in France , and played football while his friend scored a century . In his game , Daniel scored a",goal,touchdown
+"Rowan has a sister and played football while his friends scored a run and a century . In his game , Rowan scored a",goal,touchdown
+"Rowan has a sister , went to school in France , and played football while his friends scored a run and a century . In his game , Rowan scored a",goal,touchdown
+"John has a sister , went to school in France , sang in a choir , and played football while his friends scored a century and a run . In his game , John scored a",goal,touchdown
+"Jake has a sister , went to school in France , sang in a choir , and played football while his friends scored a century and a goal . In his game , Jake scored a",hattrick,touchdown
+"Jake has a sister , went to school in France , and played football while his friends scored a run , a goal , and a century . In his game , Jake scored a",goal,touchdown
+"Rowan has a sister , went to school in France , and played football while his friends scored a run , a century , and a goal . In his game , Rowan scored a",goal,touchdown
+"Sebastian has a sister , went to school in France , sang in a choir , and played football while his friends scored a goal , a century , and a run . In his game , Sebastian scored a",point,touchdown
+"Daniel played football . In his game , Daniel scored a",goal,touchdown
+"Daniel has a sister and played football . In his game , Daniel scored a",goal,touchdown
+"Daniel has a sister , went to school in France , and played football . In his game , Daniel scored a",hattrick,touchdown
+"Daniel has a sister , went to school in France , sang in a choir , and played football . In his game , Daniel scored a",hattrick,touchdown
+"John has a sister , went to school in France , and played football and likes to watch soccer . In his game , John scored a",goal,touchdown
+"John has a sister , went to school in France , sang in a choir , and played football and likes to watch soccer . In his game , John scored a",goal,touchdown
+"Sebastian has a sister , went to school in France , and played soccer and likes to watch baseball . In his game , Sebastian scored a",hattrick,goal
+"Daniel has a sister and played football and likes to watch baseball and soccer . In his game , Daniel scored a",goal,touchdown
+"Daniel has a sister , went to school in France , and played football and likes to watch baseball and soccer . In his game , Daniel scored a",goal,touchdown
+"Daniel has a sister , went to school in France , sang in a choir , and played football and likes to watch baseball and soccer . In his game , Daniel scored a",goal,touchdown
+"Sebastian has a sister , went to school in France , and played football and likes to watch soccer and baseball . In his game , Sebastian scored a",goal,touchdown
+"Rowan has a sister , went to school in France , and played football and likes to watch soccer and cricket . In his game , Rowan scored a",goal,touchdown
+"Rowan has a sister , went to school in France , sang in a choir , and played football and likes to watch soccer and cricket . In his game , Rowan scored a",goal,touchdown
+"Daniel has a sister and played football and likes to watch cricket and soccer . In his game , Daniel scored a",goal,touchdown
+"Jack has a sister , went to school in France , sang in a choir , and played baseball and likes to watch football and soccer . In his game , Jack scored a",goal,run
+"Sebastian has a sister , went to school in France , and played baseball and likes to watch soccer and football . In his game , Sebastian scored a",goal,run
+"Sebastian has a sister , went to school in France , sang in a choir , and played baseball and likes to watch soccer and football . In his game , Sebastian scored a",goal,run
+"Jake has a sister , went to school in France , sang in a choir , and played cricket and likes to watch baseball and soccer . In his game , Jake scored a",goal,century
+"John has a sister and played football and likes to watch baseball , cricket , and soccer . In his game , John scored a",goal,touchdown
+"Joe has a sister , went to school in France , sang in a choir , and played football and likes to watch soccer , baseball , and cricket . In his game , Joe scored a",goal,touchdown
+"Sebastian has a sister , went to school in France , and played football and likes to watch soccer , cricket , and baseball . In his game , Sebastian scored a",goal,touchdown
+"Sebastian has a sister , went to school in France , sang in a choir , and played football and likes to watch soccer , cricket , and baseball . In his game , Sebastian scored a",goal,touchdown
+"Rowan has a sister and played football and likes to watch cricket , baseball , and soccer . In his game , Rowan scored a",goal,touchdown
+"Rowan has a sister , went to school in France , and played baseball and likes to watch football , cricket , and soccer . In his game , Rowan scored a",goal,run
+"Rowan has a sister , went to school in France , sang in a choir , and played baseball and likes to watch football , cricket , and soccer . In his game , Rowan scored a",goal,run
+"Rowan has a sister , went to school in France , sang in a choir , and played baseball and likes to watch soccer , cricket , and football . In his game , Rowan scored a",goal,run
+"Jake has a sister , went to school in France , sang in a choir , and played baseball and likes to watch cricket , football , and soccer . In his game , Jake scored a",goal,run
+"Daniel has a sister , went to school in France , and played baseball and likes to watch cricket , soccer , and football . In his game , Daniel scored a",goal,run
+"Daniel has a sister , went to school in France , sang in a choir , and played baseball and likes to watch cricket , soccer , and football . In his game , Daniel scored a",goal,run
+"Rowan has a sister , went to school in France , sang in a choir , and played cricket and likes to watch baseball , football , and soccer . In his game , Rowan scored a",goal,century
+"John has a sister , went to school in France , sang in a choir , and played cricket and likes to watch baseball , soccer , and football . In his game , John scored a",goal,century
+"Daniel has a sister , went to school in France , sang in a choir , and played cricket and likes to watch soccer , baseball , and football . In his game , Daniel scored a",goal,century
