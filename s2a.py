@@ -134,7 +134,7 @@ def preprocess(inputs, tokenizer, model_name, system_prompt, comps=False, prem_h
     else:
         def get_template(prompt):
             chat = [
-            {"role": "user", "content": system_prompt + "\n" + prompt},
+            {"role": "user", "content": system_prompt + prompt},
             ]
             return chat
 
@@ -196,7 +196,8 @@ def load_model_acc(model_id, in_4bit=False):
 def load_model_hf(model_id, memory_pinning, in_4bit=False, no_quant=False):    
     if no_quant:
         tokenizer = AutoTokenizer.from_pretrained(model_id, token=os.environ['HF_TOKEN'], padding_side='left') # use_fast argument
-        model = AutoModelForCausalLM.from_pretrained(model_id, device_map='auto', max_memory=memory_pinning, token=os.environ['HF_TOKEN'])
+        #model = AutoModelForCausalLM.from_pretrained(model_id, device_map='auto', max_memory=memory_pinning, token=os.environ['HF_TOKEN'])
+        model = AutoModelForCausalLM.from_pretrained(model_id, device_map='auto', token=os.environ['HF_TOKEN'])
 
         return model, tokenizer
     
@@ -247,7 +248,7 @@ def generate_hf(model, tokenizer, data, temperature=0.6, top_p=0.9, seed=42, N=N
             #end = torch.cuda.Event(enable_timing=True)
             #start.record()
 
-            outputs = model.generate(**batch, max_new_tokens=100, pad_token_id=tokenizer.pad_token_id, temperature=temperature, top_p=top_p, do_sample=True)
+            outputs = model.generate(**batch, max_new_tokens=200, pad_token_id=tokenizer.pad_token_id, temperature=temperature, top_p=top_p, do_sample=True)
 
             '''end.record()
             torch.cuda.synchronize()
@@ -262,7 +263,7 @@ def generate_hf(model, tokenizer, data, temperature=0.6, top_p=0.9, seed=42, N=N
             predictions.extend(preds)
 
             if save_preds:
-                file_path = '/local/js/lmcm_project/eval/aa_check_preds.csv'
+                file_path = '/local/js/LMCM_project/eval/aa_check_preds.csv'
                 try:
                     existing_data = pd.read_csv(file_path)
                 except FileNotFoundError:

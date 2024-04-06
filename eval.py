@@ -10,8 +10,6 @@ def post_proc_s2a(preds, data_name):
         label = ""
     if data_name == "comps":
         label = ""
-    if data_name in ["qa", "qa_ic"]:
-        label = ""
 
     for pred in preds:
         try:
@@ -45,9 +43,8 @@ def accuracy(sents, preds, targets, exact_match=False, first_word=False, isin=Fa
                 incorrect['prediction'].append(pred)
                 incorrect['target'].append(target)
         if errors:
-            prefix = "/local/js/lmcm_project/eval/save_preds.csv"
-            prefix = "D:\Julian Schlenker\Documents\LMCM_project\eval"
-            pd.DataFrame(incorrect).to_csv(f"{prefix}\errors_isin_{extension}.csv", index=False)
+            prefix = "/local/js/LMCM_project/error_files"
+            pd.DataFrame(incorrect).to_csv(f"{prefix}/errors_isin_{extension}.csv", index=False)
 
     if exact_match:
         for sent, pred, target in zip(sents, preds, targets):
@@ -57,6 +54,10 @@ def accuracy(sents, preds, targets, exact_match=False, first_word=False, isin=Fa
                 incorrect['sentence'].append(sent)
                 incorrect['prediction'].append(pred)
                 incorrect['target'].append(target)
+
+        if errors:
+            prefix = "/local/js/LMCM_project/error_files"
+            pd.DataFrame(incorrect).to_csv(f"{prefix}/errors_em_{extension}.csv", index=False)
             
     if first_word:
         for sent, pred, target in zip(sents, preds, targets):
@@ -66,20 +67,10 @@ def accuracy(sents, preds, targets, exact_match=False, first_word=False, isin=Fa
                 incorrect['sentence'].append(sent)
                 incorrect['prediction'].append(pred)
                 incorrect['target'].append(target)
-    
-    '''if exact_match:
-        for pred, target in zip(preds, targets):
-            if pred.lower() == target.lower():
-                correct +=1
-            else:
-                incorrect.append(pred)
-    
-    if first_word:
-        for pred, target in zip(preds, targets):
-            if pred.split()[0].lower() == target.lower():
-                correct +=1
-            else:
-                incorrect.append(pred)'''
+
+        if errors:
+            prefix = "/local/js/LMCM_project/error_files"
+            pd.DataFrame(incorrect).to_csv(f"{prefix}/errors_fw_{extension}.csv", index=False)
     
     if comps:
         counts = defaultdict(int)
@@ -99,7 +90,7 @@ def accuracy(sents, preds, targets, exact_match=False, first_word=False, isin=Fa
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, required=True, choices=['comps', 'noise'], help='Which dataset to evaluate')
+    parser.add_argument('--dataset', type=str, required=True, choices=['comps', 'sttn'], help='Which dataset to evaluate')
     parser.add_argument('--subset', type=str, required=False, choices=['oracle', 'oracle_baseline', 'multiSem', 'multiNeutral', 'singleSem', 'singleNeutral', 'inBetween', 'before'], help='Data subset to evaluate')
     parser.add_argument('--model', type=str, required=False, choices=['llama2-13', 'llama2-70', 'mistral-v2', 'gemma-7b-it'], help='Model for evaluation')
     parser.add_argument('--file_name', type=str, required=False)
@@ -116,11 +107,10 @@ def main():
     write_err = args.write_errors
 
     if isinstance(file_name, str):
-        file_path = f"D:\Julian Schlenker\Documents\LMCM_project\eval\{file_name}.csv"
-        extension = file_name
+        file_path = f"eval/{file_name}.csv"
     else:
-        file_path = f"eval/{dataset}_{subset}_{model}.csv"
-        extension = f"{dataset}_{subset}_{model}"
+        file_name = f"{dataset}_{subset}_{model}"
+        file_path = f"eval/{file_name}.csv"
     
     data = pd.read_csv(file_path)
 
@@ -135,11 +125,11 @@ def main():
         preds = preds[:cutoff]
         targets = targets[:cutoff]
 
-    if dataset in ['noise', 'qa', 'qa_ic']:
+    if dataset in ['sttn', 'qa', 'qa_ic']:
         preds = post_proc(preds)
-        acc_isin = accuracy(sents, preds, targets, isin=True, errors=write_err, extension=extension)
-        acc_em = accuracy(sents, preds, targets, exact_match=True, errors=write_err, extension=extension)
-        acc_fw = accuracy(sents, preds, targets, first_word=True, errors=write_err, extension=extension)
+        acc_isin = accuracy(sents, preds, targets, isin=True, errors=write_err, extension=file_name)
+        acc_em = accuracy(sents, preds, targets, exact_match=True, errors=write_err, extension=file_name)
+        acc_fw = accuracy(sents, preds, targets, first_word=True, errors=write_err, extension=file_name)
         print(f"Is-in Accuracy:\t\t{acc_isin} \nExact Match Accuracy:\t{acc_em} \nFirst Word Accuracy:\t{acc_fw}")
     
     if dataset == 'comps':
