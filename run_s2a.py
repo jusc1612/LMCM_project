@@ -1,3 +1,7 @@
+import os
+os.environ["CUDA_VISIBLE_DEVICES"]= "4"
+os.environ['HF_TOKEN'] = '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'
+
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, set_seed, default_data_collator
 from torch.utils.data import DataLoader
 from importlib import reload
@@ -5,7 +9,6 @@ import s2a
 import argparse
 import pandas as pd
 import random
-import os
 import torch
 from datasets import Dataset
 from tqdm import tqdm
@@ -242,10 +245,10 @@ def main():
         file_spec = f"{dataset}_{data_subset}_s2a_step1_{model_name}"
         dataloader = DataLoader(data, collate_fn=default_data_collator, batch_size=batch_size)
         preds = generate_hf(model, tokenizer, dataloader, N=N, save_preds=True)
-        pd.DataFrame({"sentence": sents[:num_batches*batch_size], "prediction": preds}).to_csv(f"/local/js/LMCM_project/eval/save_preds.csv", index=False)
+        pd.DataFrame({"sentence": sents[:num_batches*batch_size], "prediction": preds}).to_csv(f"/local/js/LMCM_project/temp_eval/save_preds_s2a_1.csv", index=False)
         
-        #sents = s2a.post_proc_s2a(preds, dataset, )
-        #file_spec = f"{dataset}_{data_subset}_s2a_step2_{model_name}"
+        sents = s2a.post_proc_s2a(preds, dataset, label)
+        file_spec = f"{dataset}_{data_subset}_s2a_step2_{model_name}"
 
     else:
         file_spec = f"{dataset}_{data_subset}_baseline_{model_name}"
@@ -265,7 +268,7 @@ def main():
 
     # generate predictions
     preds = generate_hf(model, tokenizer, dataloader, N=N, save_preds=True)
-    pd.DataFrame({"prediction": preds}).to_csv(f"/local/js/LMCM_project/temp_eval/final_save_preds.csv", index=False)
+    pd.DataFrame({"prediction": preds}).to_csv(f"/local/js/LMCM_project/temp_eval/save_preds.csv", index=False)
 
     if out:
         s2a.write_out(sents, preds, targets, file_spec, comps=dataset=='comps')
