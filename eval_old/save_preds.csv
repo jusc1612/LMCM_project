@@ -1,9 +1,0 @@
-sentence,prediction
-"Sebastian has a sister , played basketball , sang in a choir and now works as a baker and likes to buy flowers and glasses . For his job , Sebastian sells",Sentence without irrelevant context: Sebastian works as a baker.
-"Jake has a sister , played basketball and now works as a baker and likes to buy flowers and fish . For his job , Jake sells",Sentence without irrelevant context: Jake works as a baker.
-"John has a sister , played basketball and now works as a baker and likes to buy glasses and flowers . For his job , John sells",Sentence without irrelevant context: John works as a baker.
-"John has a sister , played basketball , sang in a choir and now works as a baker and likes to buy glasses and flowers . For his job , John sells",Sentence without irrelevant context: John works as a baker.
-"Joe has a sister , played basketball and now works as a baker and likes to buy glasses and fish . For his job , Joe sells",Sentence without irrelevant context: Joe works as a baker.
-"Sebastian has a sister , played basketball and now works as a baker and likes to buy glasses and paintings . For his job , Sebastian sells",Sentence without irrelevant context: Sebastian works as a baker.
-"Sebastian has a sister , played basketball , sang in a choir and now works as a baker and likes to buy glasses and paintings . For his job , Sebastian sells",Sentence without irrelevant context: Sebastian works as a baker.
-"John has a sister , played basketball and now works as a baker and likes to buy meat and glasses . For his job , John sells",Sentence without irrelevant context: John works as a baker.
