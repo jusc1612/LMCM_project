@@ -1,7 +1,6 @@
 import os
 import torch
 import pandas as pd
-import string
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, set_seed
 from datasets import Dataset
 from tqdm import tqdm
@@ -162,7 +161,7 @@ def write_out(sents, predictions, targets, file_spec, comps=False):
             predictions += ['na'] * length_diff
         data = {"sentence": sents, "prediction": predictions,  "target": targets}
     
-    pd.DataFrame(data).to_csv(f"/local/js/lmcm_project/eval/{file_spec}.csv", index=False)
+    pd.DataFrame(data).to_csv(f"/local/js/LMCM_project/eval/{file_spec}.csv", index=False)
 
 
 # ------ Huggingface Experiments ----------

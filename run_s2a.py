@@ -1,11 +1,12 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"]= "4"
+os.environ["CUDA_VISIBLE_DEVICES"]= "5, 6, 7"
 os.environ['HF_TOKEN'] = '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'
 
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, set_seed, default_data_collator
 from torch.utils.data import DataLoader
 from importlib import reload
 import s2a
+import eval
 import argparse
 import pandas as pd
 import random
@@ -13,8 +14,8 @@ import torch
 from datasets import Dataset
 from tqdm import tqdm
 
-s2a = reload(s2a)
 random.seed(42)
+set_seed(42)
 
 def preprocess(inputs, tokenizer, model_name, system_prompt, comps=False, prem_hyp=False):
     if tokenizer.pad_token is None:
@@ -85,31 +86,20 @@ def load_model_hf(model_id, memory_pinning, in_4bit=False, no_quant=False):
         )
 
     tokenizer = AutoTokenizer.from_pretrained(model_id, token=os.environ['HF_TOKEN'], padding_side='left') 
-    model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_config, device_map='auto', max_memory=memory_pinning, token=os.environ['HF_TOKEN'])
+    model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_config, device_map='auto', token=os.environ['HF_TOKEN'])
 
     return model, tokenizer
 
-def generate_hf(model, tokenizer, data, temperature=0.6, top_p=0.9, seed=42, N=None, save_preds=False):
+def generate_hf(model, tokenizer, data, temperature=0.6, top_p=0.9, seed=42, N=None, save_preds=True):
     set_seed(seed)
     predictions = []
 
     for i, batch in enumerate(tqdm(data, desc="Batches")):
-        outputs = model.generate(**batch, max_new_tokens=200, pad_token_id=tokenizer.pad_token_id, temperature=temperature, top_p=top_p, do_sample=True)
+        outputs = model.generate(**batch, max_new_tokens=50, pad_token_id=tokenizer.pad_token_id, temperature=temperature, top_p=top_p, do_sample=True)
         outputs = [output[len(input):] for input, output in zip(batch['input_ids'], outputs)]
 
         preds = tokenizer.batch_decode(outputs, skip_special_tokens=True)
         predictions.extend(preds)
-
-        if save_preds:
-            file_path = '/local/js/LMCM_project/eval/aa_check_preds.csv'
-            try:
-                existing_data = pd.read_csv(file_path)
-            except FileNotFoundError:
-                existing_data = pd.DataFrame({"prediction": []})
-
-            new_data = pd.DataFrame({'prediction': preds})
-            updated_data = existing_data._append(new_data, ignore_index=True)
-            updated_data.to_csv(file_path, index=False)
         
         if isinstance(N, int) and i == N-1:
             break
@@ -119,15 +109,15 @@ def generate_hf(model, tokenizer, data, temperature=0.6, top_p=0.9, seed=42, N=N
 def main():
     parser = argparse.ArgumentParser()
     
-    parser.add_argument('--dataset', type=str, required=True, choices=['comps', 'sttn', 'tqa', 'qa_ic'], help='Which dataset to use')
+    parser.add_argument('--dataset', type=str, required=True, choices=['comps', 'sttn'], help='Which dataset to use')
     parser.add_argument('--prem_hyp', action="store_true", required=False, help='For COMPS only: Split data into labeled Premise and Hypothesis')
-    parser.add_argument('--subset', type=str, required=True, choices=['oracle', 'multiSem', 'multiNeutral', 'singleSem', 'singleNeutral', 'inBetween', 'before', 'ic'], help='Data subset to evaluate')
+    parser.add_argument('--subset', type=str, required=True, choices=['oracle', 'multiSem', 'multiNeutral', 'singleSem', 'singleNeutral', 'inBetween', 'before'], help='Data subset to evaluate')
     parser.add_argument('--subset_size', type=int, required=False, help='Choose subset size to evaluate')
-    parser.add_argument('--model', type=str, required=True, choices=['llama2-13', 'llama2-70', 'mistral-v2', 'gemma-7b-it'], help='Model for evaluation')
+    parser.add_argument('--model', type=str, required=True, choices=['llama2-13', 'llama2-70', 'mistral-v2'], help='Model for evaluation')
     parser.add_argument('--quant', type=str, choices=['4bit', '8bit', 'none'], help='Set quantization method')
     parser.add_argument('--s2a', action="store_true", required=False, default=False, help='Use s2a or not (baseline)')
     parser.add_argument('--batch_size', type=int, default=8, help='Define batch size')
-    parser.add_argument('--eval_output_dir', action="store_true", help='Save the model output to a file')
+    parser.add_argument('--out', action="store_true", help='Save the model output to a file')
     parser.add_argument('--num_batches', type=int, default=None, help='Choose number of batches to run model on')
     
     args = parser.parse_args()
@@ -141,12 +131,17 @@ def main():
     quant = args.quant
     sys2att = args.s2a
     batch_size = args.batch_size
-    out = args.eval_output_dir
+    out = args.out
     num_batches = args.num_batches
 
     # ----- load data ---------
     if dataset == 'sttn':
         model_data = "GPT2Large"
+
+        # test
+        if data_subset == 'oracle':
+            oracle = pd.read_csv('/local/js/LMCM_project/eval/sttn_multiSem_oracle_mistral-v2.csv')
+            sents, targets = oracle['sentence'], oracle['target']
 
         if data_subset == 'multiSem':
             multiSem = s2a.load_sttn(model_data, "Multi", return_dataset=True)
@@ -163,6 +158,9 @@ def main():
 
         # set system prompt
         system_prompt = 'Complete the following sentence with one single word: '
+        #system_prompt = 'Complete the following sentence with a single word. Give only the one word as the answer.\nSentence: '
+
+        file_spec = f"{dataset}_{data_subset}_baseline_oracle_{model_name}"
     
     if dataset == 'comps':
         if data_subset == 'oracle':
@@ -194,6 +192,8 @@ def main():
         system_prompt = "You'ra a helpful writing assistant. Tell me from which premise (1 or 2) the given hypothesis logically follows." # Reply with the single digit corresponding to your choice."
         system_prompt = "You are a helpful writing assistant. Tell me which sentence 'A' or 'B' is semantically more plausible. Reply with the single letter corresponding to your choice."
 
+        file_spec = f"{dataset}_{data_subset}_{model_name}"
+
     # ----- Models -------
     if model_name == 'llama2-13':
         model_id = 'meta-llama/Llama-2-13b-chat-hf'
@@ -214,19 +214,15 @@ def main():
 
     max_memory_mapping = {0: "0GB", 1: "0GB", 2: "0GB", 3:"60GB", 4:"0GB", 5:"0GB", 6:"0GB", 7:"0GB"}
     model, tokenizer = load_model_hf(model_id, memory_pinning=max_memory_mapping, in_4bit=in_4bit, no_quant=no_quant)
-    #model.to_bettertransformer()
 
     # step 1 of s2a: separate relevant from distracting information 
     if sys2att:
         if dataset == 'sttn':
-            label = "Sentence without irrelvant context:"
-            s2a_step1 = f'''Given the following incomplete sentence, extract the part that is related and useful, so that using that part alone
-                        would a be good context for providing an accurate completion to the incomplete sentence. Please, start your response
-                        with: "{label}" followed by your extracted part.
-                        Sentence: '''
+            label = "Sentence without irrelevant context:"
+            s2a_step1 = f'''Given the following incomplete sentence, extract the part that is related and useful, so that using that part alone would a be good context for providing an accurate completion to the final part of sentence.\nPlease, start your response with: "{label}" followed by your extracted part. \nSentence: '''
 
-            df = pd.read_csv("/local/js/LMCM_project/error_files/test2_multiSem_isIn_mistral.csv")
-            sents, targets = df['sentence'], df['target']
+            df = pd.read_csv("/local/js/LMCM_project/s2a_data.csv")
+            sents, targets, setting = df['sentence'], df['target'], df['setting']
         
         if dataset == 'comps':
             label = "Context relevant to conlcusion (includes all content except irrelevant sentences):"
@@ -234,24 +230,15 @@ def main():
             Start your response with "{label}".
             
             Text by user: '''
-
-        if dataset in ['qa', 'qa_ic']:
-            label = "Question (does not include irrelevant context):"
-            s2a_step1 = f'''Given the following text by a user, remove the the portion that is irrelevant to answer the question. Start your response with "{label}".
-            
-            Text by User: '''
             
         data = preprocess(sents, tokenizer, model.name_or_path, s2a_step1)
         file_spec = f"{dataset}_{data_subset}_s2a_step1_{model_name}"
         dataloader = DataLoader(data, collate_fn=default_data_collator, batch_size=batch_size)
         preds = generate_hf(model, tokenizer, dataloader, N=N, save_preds=True)
-        pd.DataFrame({"sentence": sents[:num_batches*batch_size], "prediction": preds}).to_csv(f"/local/js/LMCM_project/temp_eval/save_preds_s2a_1.csv", index=False)
+        pd.DataFrame({"sentence": sents, "prediction": preds, "target": targets, "setting": setting}).to_csv(f"/local/js/LMCM_project/temp_eval/save_preds_s2a_1.csv", index=False)
         
-        sents = s2a.post_proc_s2a(preds, dataset, label)
+        sents = eval.post_proc_s2a(preds, targets, label)
         file_spec = f"{dataset}_{data_subset}_s2a_step2_{model_name}"
-
-    else:
-        file_spec = f"{dataset}_{data_subset}_baseline_{model_name}"
 
     # prepare data
     if prem_hyp and dataset == 'comps':
@@ -268,13 +255,10 @@ def main():
 
     # generate predictions
     preds = generate_hf(model, tokenizer, dataloader, N=N, save_preds=True)
-    pd.DataFrame({"prediction": preds}).to_csv(f"/local/js/LMCM_project/temp_eval/save_preds.csv", index=False)
+    pd.DataFrame({"sentence": sents, "prediction": preds, "target": targets}).to_csv(f"/local/js/LMCM_project/temp_eval/save_preds.csv", index=False)
 
     if out:
         s2a.write_out(sents, preds, targets, file_spec, comps=dataset=='comps')
-
-    if not out and num_batches <= 5:
-        print(preds) 
 
 if __name__ == '__main__':
     main()
