@@ -1,6 +1,6 @@
 import os
 os.environ["CUDA_VISIBLE_DEVICES"]= "5, 6, 7"
-os.environ['HF_TOKEN'] = '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'
+os.environ['HF_TOKEN'] = ''
 
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, set_seed, default_data_collator
 from torch.utils.data import DataLoader
@@ -16,6 +16,7 @@ from tqdm import tqdm
 
 random.seed(42)
 set_seed(42)
+s2a = reload(s2a)
 
 def preprocess(inputs, tokenizer, model_name, system_prompt, comps=False, prem_hyp=False):
     if tokenizer.pad_token is None:
@@ -65,10 +66,9 @@ def preprocess(inputs, tokenizer, model_name, system_prompt, comps=False, prem_h
 
     return dataset
 
-def load_model_hf(model_id, memory_pinning, in_4bit=False, no_quant=False):    
+def load_model_hf(model_id, in_4bit=False, no_quant=False):    
     if no_quant:
         tokenizer = AutoTokenizer.from_pretrained(model_id, token=os.environ['HF_TOKEN'], padding_side='left') # use_fast argument
-        #model = AutoModelForCausalLM.from_pretrained(model_id, device_map='auto', max_memory=memory_pinning, token=os.environ['HF_TOKEN'])
         model = AutoModelForCausalLM.from_pretrained(model_id, device_map='auto', token=os.environ['HF_TOKEN'])
 
         return model, tokenizer
@@ -212,8 +212,7 @@ def main():
 
     N = num_batches if isinstance(num_batches, int) else None
 
-    max_memory_mapping = {0: "0GB", 1: "0GB", 2: "0GB", 3:"60GB", 4:"0GB", 5:"0GB", 6:"0GB", 7:"0GB"}
-    model, tokenizer = load_model_hf(model_id, memory_pinning=max_memory_mapping, in_4bit=in_4bit, no_quant=no_quant)
+    model, tokenizer = load_model_hf(model_id, in_4bit=in_4bit, no_quant=no_quant)
 
     # step 1 of s2a: separate relevant from distracting information 
     if sys2att:
