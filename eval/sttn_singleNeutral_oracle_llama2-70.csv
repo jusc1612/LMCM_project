@@ -1,0 +1,23 @@
+sentence,prediction,target
+"Daniel works as a florist . For his job , Daniel sells", Flowers,flowers
+"Sebastian works as an optician . For his job , Sebastian sells", glasses,glasses
+"Daniel works as a butcher . For his job , Daniel sells", Meat,meat
+"Joe works as a baker . For his job , Joe sells", bread,bread
+"Rowan works as a fisherman . For his job , Rowan sells", fish,fish
+"Jack works as a painter . For his job , Jack sells", Art,paintings
+Jake lives in Chile . The capital of Jake's country is, Santiago,Santiago
+Jake lives in China . The capital of Jake's country is, Beijing,Beijing
+John lives in Finland . The capital of John's country is, Helsinki,Helsinki
+Sebastian lives in France . The capital of Sebastian's country is, Paris,Paris
+Joe lives in Indonesia . The capital of Joe's country is, Jakarta,Jakarta
+Daniel lives in Poland . The capital of Daniel's country is, Warsaw,Warsaw
+sebastian visited the taj mahal . the country sebastian traveled to was, India,India
+rowan visited the eiffel tower . the country rowan traveled to was, France,France
+jack visited the pyramid of giza . the country jack traveled to was, Egypt,Egypt
+sebastian visited the machu picchu . the country sebastian traveled to was, Peru,Peru
+joe visited the tower of pisa . the country joe traveled to was, Italy,Italy
+jack visited the kremlin . the country jack traveled to was, Russia,Russia
+"Daniel played football . In his game , Daniel scored a", Goal,touchdown
+"Sebastian played baseball . In his game , Sebastian scored a", Home run,run
+"Jake played soccer . In his game , Jake scored a", Goal,goal
+"Jake played cricket . In his game , Jake scored a", century.,century

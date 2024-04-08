@@ -1,0 +1,59 @@
+sentence,prediction,target
+"Daniel works as a florist . For his job , Daniel sells",flowers.,flowers
+"Sebastian works as an optician . For his job , Sebastian sells","eyeglasses or contact lenses. Therefore, the completed sentence is: Sebastian works as an optician. For his job, Sebastian sells eyeglasses or contact lenses.",glasses
+"Daniel works as a butcher . For his job , Daniel sells",Meat.,meat
+"Joe works as a baker . For his job , Joe sells",pastries.,bread
+"Rowan works as a fisherman . For his job , Rowan sells",fish.,fish
+"Jack works as a painter . For his job , Jack sells","Canvas or Paint. The answer depends on what Jack sells as a painter. If he sells finished paintings, then the answer is ""Canvas or Paint (as in, the finished product)."" If he sells paint supplies,",paintings
+"Daniel works as a florist . For his job , Daniel sells",flowers.,flowers
+"Sebastian works as an optician . For his job , Sebastian sells",Spectacles.,glasses
+"Daniel works as a butcher . For his job , Daniel sells",Meat.,meat
+"Joe works as a baker . For his job , Joe sells",pastries.,bread
+"Rowan works as a fisherman . For his job , Rowan sells",fish.,fish
+"Jack works as a painter . For his job , Jack sells","Canvasess or Paint for his job as a painter. However, if you meant that Jack sells his own paintings, then the answer is ""paintings.""",paintings
+Jake lives in Chile . The capital of Jake's country is,"Santiago. Therefore, the completed sentence would be: Jake lives in Chile. The capital of Jake's country is Santiago.",Santiago
+Jake lives in China . The capital of Jake's country is,"Jake is a person, not a country. Therefore, Jake does not have a capital city.",Beijing
+John lives in Finland . The capital of John's country is,Helsinki. (The capital city of Finland),Helsinki
+Sebastian lives in France . The capital of Sebastian's country is,"Spain. The sentence should read: ""Sebastian lives in France. The capital of his country is Madrid, Spain."" (Assuming Sebastian is Spanish) If Sebastian is actually from France, then the sentence would read: ""Sebast",Paris
+Joe lives in Indonesia . The capital of Joe's country is,"Jakarta. Therefore, the completed sentence would be: ""Joe lives in Indonesia. The capital of Joe's country is Jakarta.""",Jakarta
+Daniel lives in Poland . The capital of Daniel's country is,"Warsaw. Therefore, the completed sentence would be: Daniel lives in Poland. The capital of Daniel's country is Warsaw.",Warsaw
+Jake lives in Chile . The capital of Jake's country is,Santiago. The correct completion of the sentence would be: Jake lives in Chile. The capital of Jake's country is Santiago.,Santiago
+Jake lives in China . The capital of Jake's country is,"Jake is a person, not a country. Therefore, the sentence ""Jake lives in China"" does not imply that China is Jake's country. If you meant to ask about the capital city of China, the answer is Beijing.",Beijing
+John lives in Finland . The capital of John's country is,Helsinki. (The capital city of Finland.),Helsinki
+Sebastian lives in France . The capital of Sebastian's country is,"The sentence is ""Sebastian lives in France."" The capital of France is Paris. However, since the sentence does not ask for the capital of Sebastian's country, there is no single word to complete the sentence as given.",Paris
+Joe lives in Indonesia . The capital of Joe's country is,Jakarta. (Joe lives in Indonesia. The capital of Joe's country is Jakarta.),Jakarta
+Daniel lives in Poland . The capital of Daniel's country is,Warsaw. (The capital city of Poland.),Warsaw
+sebastian visited the taj mahal . the country sebastian traveled to was,India.,India
+rowan visited the eiffel tower . the country rowan traveled to was,"France.
+
+Therefore, the completed sentence would be: ""Rowan visited the Eiffel Tower. The country Rowan traveled to was France.""",France
+jack visited the pyramid of giza . the country jack traveled to was,"Egypt.
+
+Therefore, the completed sentence would be: ""Jack visited the Pyramid of Giza in Egypt.""",Egypt
+sebastian visited the machu picchu . the country sebastian traveled to was,"Peru.
+
+Therefore, the completed sentence would be: ""Sebastian visited Machu Picchu in Peru.""",Peru
+joe visited the tower of pisa . the country joe traveled to was,Italy. (The Tower of Pisa is located in Italy.),Italy
+jack visited the kremlin . the country jack traveled to was,"Russia.
+
+Therefore, the completed sentence would be: ""Jack visited the Kremlin. The country Jack traveled to was Russia.""",Russia
+sebastian visited the taj mahal . the country sebastian traveled to was,India.,India
+rowan visited the eiffel tower . the country rowan traveled to was,"France.
+
+Therefore, the completed sentence would be: ""Rowan visited the Eiffel Tower. The country Rowan traveled to was France.""",France
+jack visited the pyramid of giza . the country jack traveled to was,"Egypt.
+
+Therefore, the completed sentence would be: ""Jack visited the Pyramid of Giza in Egypt.""",Egypt
+sebastian visited the machu picchu . the country sebastian traveled to was,Peru.,Peru
+joe visited the tower of pisa . the country joe traveled to was,Italy. (The Tower of Pisa is located in Italy.),Italy
+jack visited the kremlin . the country jack traveled to was,"Russia.
+
+Therefore, the completed sentence would be: ""Jack visited the Kremlin. The country Jack traveled to was Russia.""",Russia
+"Daniel played football . In his game , Daniel scored a",touchdown.,touchdown
+"Sebastian played baseball . In his game , Sebastian scored a",home run.,run
+"Jake played soccer . In his game , Jake scored a",hat-trick. (A hat-trick is when a player scores three goals in a single game.),goal
+"Jake played cricket . In his game , Jake scored a","hundred. (or: In his game, Jake scored a century.)",century
+"Daniel played football . In his game , Daniel scored a",touchdown.,touchdown
+"Sebastian played baseball . In his game , Sebastian scored a",home run.,run
+"Jake played soccer . In his game , Jake scored a",hat-trick. (A hat-trick is a feat in soccer where a player scores three goals in a single game.),goal
+"Jake played cricket . In his game , Jake scored a",hundred. (Or you could use another number depending on how many runs Jake scored.),century
