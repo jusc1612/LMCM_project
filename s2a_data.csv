@@ -1,0 +1,203 @@
+sentence,target,setting
+"Daniel has a sister , played basketball , sang in a choir and now works as a butcher and likes to buy fish . For his job , Daniel sells",meat,single
+"Sebastian has a sister , played basketball , sang in a choir and now works as a butcher and likes to buy fish and flowers . For his job , Sebastian sells",meat,single
+"Jake has a sister , played basketball , sang in a choir and now works as a butcher and likes to buy fish and glasses . For his job , Jake sells",meat,single
+"Joe has a sister , played basketball , sang in a choir and now works as a butcher and likes to buy fish , flowers , and glasses . For his job , Joe sells",meat,single
+"Sebastian has a sister , went to school in France , sang in a choir , and played baseball and likes to watch football . In his game , Sebastian scored a",run,single
+"Jake has a sister , went to school in France , sang in a choir , and played baseball and likes to watch soccer . In his game , Jake scored a",run,single
+"Jack has a sister , went to school in France , and played baseball and likes to watch football and soccer . In his game , Jack scored a",run,single
+"Jack has a sister , went to school in France , sang in a choir , and played baseball and likes to watch football and soccer . In his game , Jack scored a",run,single
+"Sebastian has a sister and played baseball and likes to watch soccer and football . In his game , Sebastian scored a",run,single
+"Sebastian has a sister , went to school in France , and played baseball and likes to watch soccer and football . In his game , Sebastian scored a",run,single
+"Sebastian has a sister , went to school in France , sang in a choir , and played baseball and likes to watch soccer and football . In his game , Sebastian scored a",run,single
+"John has a sister , went to school in France , and played baseball and likes to watch football , soccer , and cricket . In his game , John scored a",run,single
+"John has a sister , went to school in France , sang in a choir , and played baseball and likes to watch football , soccer , and cricket . In his game , John scored a",run,single
+"Rowan has a sister , went to school in France , and played baseball and likes to watch football , cricket , and soccer . In his game , Rowan scored a",run,single
+"Rowan has a sister , went to school in France , sang in a choir , and played baseball and likes to watch football , cricket , and soccer . In his game , Rowan scored a",run,single
+"John has a sister and played baseball and likes to watch soccer , football , and cricket . In his game , John scored a",run,single
+"John has a sister , went to school in France , and played baseball and likes to watch soccer , football , and cricket . In his game , John scored a",run,single
+"John has a sister , went to school in France , sang in a choir , and played baseball and likes to watch soccer , football , and cricket . In his game , John scored a",run,single
+"Rowan has a sister and played baseball and likes to watch soccer , cricket , and football . In his game , Rowan scored a",run,single
+"Rowan has a sister , went to school in France , and played baseball and likes to watch soccer , cricket , and football . In his game , Rowan scored a",run,single
+"Rowan has a sister , went to school in France , sang in a choir , and played baseball and likes to watch soccer , cricket , and football . In his game , Rowan scored a",run,single
+"Jake has a sister , went to school in France , and played baseball and likes to watch cricket , football , and soccer . In his game , Jake scored a",run,single
+"Jake has a sister , went to school in France , sang in a choir , and played baseball and likes to watch cricket , football , and soccer . In his game , Jake scored a",run,single
+"Daniel has a sister , went to school in France , and played baseball and likes to watch cricket , soccer , and football . In his game , Daniel scored a",run,single
+"Daniel has a sister , went to school in France , sang in a choir , and played baseball and likes to watch cricket , soccer , and football . In his game , Daniel scored a",run,single
+"Joe has a sister , went to school in France , and played football and likes to watch cricket , soccer , and baseball . In his game , Joe scored a",touchdown,single
+"Sebastian has a sister , went to school in France , sang in a choir , and played football and likes to watch soccer , cricket , and baseball . In his game , Sebastian scored a",touchdown,single
+"Daniel has a sister , went to school in France , and played football . In his game , Daniel scored a",touchdown,single
+"Daniel has a sister , went to school in France , and played football and likes to watch cricket and soccer . In his game , Daniel scored a",touchdown,single
+"Daniel has a sister , went to school in France , sang in a choir , and played football while his friend scored a century . In his game , Daniel scored a",touchdown,single
+"Sebastian has a sister , went to school in France , sang in a choir , and played football and likes to watch soccer and baseball . In his game , Sebastian scored a",touchdown,single
+"Jake has a sister , went to school in France , sang in a choir , and played football while his friends scored a century and a goal . In his game , Jake scored a",touchdown,single
+"Rowan has a sister and played football while his friends scored a goal and a century . In his game , Rowan scored a",touchdown,single
+"Daniel has a sister , went to school in France , and played football and likes to watch baseball . In his game , Daniel scored a",touchdown,single
+"Rowan has a sister , went to school in France , sang in a choir , and played football and likes to watch cricket , baseball , and soccer . In his game , Rowan scored a",touchdown,single
+"Jack has a sister and now lives in Finland and has traveled to Poland , Chile and Indonesia . The capital of Jack's country is",Helsinki,single
+"Joe has a sister and now lives in Finland and has traveled to Indonesia , China and Chile . The capital of Joe's country is",Helsinki,single
+"Sebastian has a sister , played basketball and now lives in Finland and has travelled to Warsaw , Paris and Jakarta . The capital of Sebastian's country is",Helsinki,single
+Daniel has a sister and now lives in Finland and has travelled to Santiago and Beijing . The capital of Daniel's country is,Helsinki,single
+"Sebastian has a sister and now lives in Finland and has travelled to Beijing , Paris and Jakarta . The capital of Sebastian's country is",Helsinki,single
+"Sebastian has a sister and now lives in Finland and has traveled to Poland , Chile and France . The capital of Sebastian's country is",Helsinki,single
+"Rowan has a sister and now lives in Finland and has travelled to Paris , Santiago and Beijing . The capital of Rowan's country is",Helsinki,single
+"Joe has a sister , played basketball , sang in a choir and now lives in Finland and has travelled to Paris , Beijing and Warsaw . The capital of Joe's country is",Helsinki,single
+"Sebastian has a sister , played basketball and now lives in Finland and has travelled to Beijing . The capital of Sebastian's country is",Helsinki,single
+John has a sister and now lives in Finland . The capital of John's country is,Helsinki,single
+"Joe has a sister , played basketball and now lives in Finland and has travelled to Paris , Santiago and Jakarta . The capital of Joe's country is",Helsinki,single
+Jack has a sister and now lives in Finland and has traveled to France and Indonesia . The capital of Jack's country is,Helsinki,single
+"Jack has a sister , played basketball and now lives in Finland and has traveled to Poland . The capital of Jack's country is",Helsinki,single
+"Joe has a sister , played basketball , sang in a choir and now lives in Finland and has travelled to Warsaw , Beijing and Santiago . The capital of Joe's country is",Helsinki,single
+"Rowan has a sister , played basketball and now lives in Finland and has travelled to Santiago , Paris and Warsaw . The capital of Rowan's country is",Helsinki,single
+"Joe has a sister , played basketball , sang in a choir and now lives in Finland and has travelled to Santiago , Jakarta and Beijing . The capital of Joe's country is",Helsinki,single
+"Rowan has a sister and now lives in Finland and has travelled to Jakarta , Warsaw and Paris . The capital of Rowan's country is",Helsinki,single
+"Joe has a sister , played basketball and now lives in Finland and has travelled to Paris , Beijing and Warsaw . The capital of Joe's country is",Helsinki,single
+"Rowan has a sister and now lives in Finland and has travelled to Santiago , Jakarta and Warsaw . The capital of Rowan's country is",Helsinki,single
+"Daniel has a sister , played basketball and now lives in Finland and has travelled to Jakarta , Paris and Warsaw . The capital of Daniel's country is",Helsinki,single
+"Rowan has a sister , played basketball and now lives in Finland and has travelled to Warsaw , Beijing and Paris . The capital of Rowan's country is",Helsinki,single
+"John has a sister and now lives in Finland and has travelled to Paris , Beijing and Jakarta . The capital of John's country is",Helsinki,single
+"Jack has a sister and now lives in Finland and has traveled to France , Chile and Poland . The capital of Jack's country is",Helsinki,single
+"John has a sister , played basketball , sang in a choir and now lives in Finland and has travelled to Warsaw and Beijing . The capital of John's country is",Helsinki,single
+Sebastian has a sister and now lives in Finland and has travelled to Warsaw and Santiago . The capital of Sebastian's country is,Helsinki,single
+"Rowan has a sister and now lives in Finland and has traveled to Indonesia , Poland and France . The capital of Rowan's country is",Helsinki,single
+"Sebastian has a sister , played basketball , sang in a choir and now lives in Finland and has traveled to Poland , Chile and France . The capital of Sebastian's country is",Helsinki,single
+"Daniel has a sister and now lives in Finland and has travelled to Paris , Warsaw and Santiago . The capital of Daniel's country is",Helsinki,single
+"Daniel has a sister and now lives in Finland and has traveled to Chile , France and China . The capital of Daniel's country is",Helsinki,single
+"Rowan has a sister , played basketball and now lives in Finland and has traveled to China , Indonesia and Chile . The capital of Rowan's country is",Helsinki,single
+"Rowan has a sister , played basketball and now lives in Finland and has travelled to Beijing and Santiago . The capital of Rowan's country is",Helsinki,single
+"John has a sister , played basketball and now lives in Finland and has traveled to China , Indonesia and Poland . The capital of John's country is",Helsinki,single
+Sebastian has a sister and now lives in Finland and has travelled to Jakarta and Santiago . The capital of Sebastian's country is,Helsinki,single
+"Jake has a sister , played basketball and now lives in Finland and has travelled to Beijing and Warsaw . The capital of Jake's country is",Helsinki,single
+John has a sister and now lives in Finland and has travelled to Warsaw and Beijing . The capital of John's country is,Helsinki,single
+"Jake has a sister , played basketball , sang in a choir and now lives in Finland and has travelled to Jakarta . The capital of Jake's country is",Helsinki,single
+"Rowan has a sister , played basketball and now lives in Finland and has travelled to Paris , Jakarta and Beijing . The capital of Rowan's country is",Helsinki,single
+"Rowan has a sister , played basketball , sang in a choir and now lives in Finland and has traveled to France and China . The capital of Rowan's country is",Helsinki,single
+"Jake has a sister , played basketball and now lives in Finland and has travelled to Paris , Jakarta and Santiago . The capital of Jake's country is",Helsinki,single
+"Daniel has a sister , played basketball , sang in a choir and now lives in Finland and has travelled to Beijing , Warsaw and Jakarta . The capital of Daniel's country is",Helsinki,single
+"John has a sister , played basketball , sang in a choir and now lives in Finland and has travelled to Beijing , Santiago and Warsaw . The capital of John's country is",Helsinki,single
+"Daniel has a sister and now lives in Finland and has travelled to Beijing , Jakarta and Santiago . The capital of Daniel's country is",Helsinki,single
+"Daniel has a sister , played basketball , sang in a choir and now lives in Finland and has travelled to Paris , Warsaw and Santiago . The capital of Daniel's country is",Helsinki,single
+"Jake has a sister , played basketball and now lives in Finland and has travelled to Beijing , Paris and Santiago . The capital of Jake's country is",Helsinki,single
+"Sebastian has a sister , played basketball , sang in a choir and now lives in Finland and has travelled to Jakarta , Santiago and Warsaw . The capital of Sebastian's country is",Helsinki,single
+"Joe has a sister , played basketball , sang in a choir and now lives in Finland and has traveled to France and Poland . The capital of Joe's country is",Helsinki,single
+"Daniel has a sister , played basketball and now lives in Finland and has traveled to Chile , China and Indonesia . The capital of Daniel's country is",Helsinki,single
+"Joe has a sister , played basketball and now lives in Finland and has traveled to Poland , France and Chile . The capital of Joe's country is",Helsinki,single
+"Rowan has a sister , played basketball and now lives in Finland and has traveled to Chile , Indonesia and China . The capital of Rowan's country is",Helsinki,single
+"Daniel has a sister , played basketball , sang in a choir and now lives in Finland and has traveled to China . The capital of Daniel's country is",Helsinki,single
+"Sebastian has a sister , played basketball , sang in a choir and now lives in Poland and has traveled to France , Chile and Indonesia . The capital of Sebastian's country is",Warsaw,single
+Sebastian has a sister and now lives in Poland and has travelled to Paris and Beijing . The capital of Sebastian's country is,Warsaw,single
+"Jake has a sister , played basketball , sang in a choir and now lives in Poland and has travelled to Santiago and Jakarta . The capital of Jake's country is",Warsaw,single
+"Jake has a sister and now lives in Poland and has traveled to Finland , Indonesia and China . The capital of Jake's country is",Warsaw,single
+"Rowan has a sister and now lives in Poland and has travelled to Santiago , Helsinki and Paris . The capital of Rowan's country is",Warsaw,single
+"Joe has a sister , played basketball , sang in a choir and now lives in Poland and has traveled to Chile , China and Indonesia . The capital of Joe's country is",Warsaw,single
+"Joe has a sister , played basketball , sang in a choir and now lives in Poland and has travelled to Beijing , Santiago and Paris . The capital of Joe's country is",Warsaw,single
+"Jake has a sister , played basketball and now lives in Poland and has travelled to Helsinki , Paris and Jakarta . The capital of Jake's country is",Warsaw,single
+"Daniel has a sister , played basketball , sang in a choir and now lives in Poland and has traveled to Finland , China and Indonesia . The capital of Daniel's country is",Warsaw,single
+"Jake has a sister and now lives in Poland and has travelled to Paris , Santiago and Beijing . The capital of Jake's country is",Warsaw,single
+"Jake has a sister , played basketball , sang in a choir and now lives in Poland and has traveled to Indonesia and France . The capital of Jake's country is",Warsaw,single
+Joe has a sister and now lives in Poland and has travelled to Paris and Jakarta . The capital of Joe's country is,Warsaw,single
+"Joe has a sister , played basketball and now lives in Poland and has travelled to Jakarta , Santiago and Beijing . The capital of Joe's country is",Warsaw,single
+"Daniel has a sister , played basketball and now lives in Poland and has travelled to Santiago , Helsinki and Beijing . The capital of Daniel's country is",Warsaw,single
+"Joe has a sister , played basketball and now lives in Poland and has travelled to Jakarta , Santiago and Helsinki . The capital of Joe's country is",Warsaw,single
+"Sebastian has a sister , played basketball , sang in a choir and now lives in Poland and has traveled to China , Finland and Indonesia . The capital of Sebastian's country is",Warsaw,single
+"Daniel has a sister , played basketball and now lives in Poland . The capital of Daniel's country is",Warsaw,single
+"Sebastian has a sister , played basketball , sang in a choir and now lives in Poland and has traveled to Indonesia and Finland . The capital of Sebastian's country is",Warsaw,single
+"Jake has a sister , played basketball , sang in a choir and now lives in Poland and has traveled to France , Finland and China . The capital of Jake's country is",Warsaw,single
+"Sebastian has a sister and now lives in Poland and has travelled to Helsinki , Santiago and Paris . The capital of Sebastian's country is",Warsaw,single
+John has a sister and now lives in Poland and has travelled to Santiago and Helsinki . The capital of John's country is,Warsaw,single
+"Daniel has a sister , played basketball , sang in a choir and now lives in Poland and has travelled to Jakarta , Paris and Helsinki . The capital of Daniel's country is",Warsaw,single
+"Daniel has a sister and now lives in Poland and has travelled to Santiago , Jakarta and Paris . The capital of Daniel's country is",Warsaw,single
+"John has a sister , played basketball and now lives in Poland and has traveled to Chile , China and France . The capital of John's country is",Warsaw,single
+"John has a sister and now lives in Poland and has traveled to Chile , Indonesia and Finland . The capital of John's country is",Warsaw,single
+"Jake has a sister , played basketball , sang in a choir and now lives in Poland and has travelled to Paris , Beijing and Helsinki . The capital of Jake's country is",Warsaw,single
+"Jack has a sister , played basketball , sang in a choir and now lives in Poland and has traveled to France and Indonesia . The capital of Jack's country is",Warsaw,single
+Sebastian has a sister and now lives in Poland and has traveled to Chile and Indonesia . The capital of Sebastian's country is,Warsaw,single
+"Rowan has a sister , played basketball , sang in a choir and now lives in Poland and has traveled to Chile and France . The capital of Rowan's country is",Warsaw,single
+"Sebastian has a sister , played basketball , sang in a choir and now lives in Poland and has traveled to Indonesia , France and Chile . The capital of Sebastian's country is",Warsaw,single
+Sebastian has a sister and now lives in Poland and has travelled to Helsinki and Beijing . The capital of Sebastian's country is,Warsaw,single
+"Daniel has a sister , played basketball and now lives in Poland and has travelled to Helsinki , Beijing and Paris . The capital of Daniel's country is",Warsaw,single
+Sebastian has a sister and now lives in Poland and has travelled to Jakarta and Santiago . The capital of Sebastian's country is,Warsaw,single
+"John has a sister , played basketball and now lives in Poland and has traveled to Indonesia , China and France . The capital of John's country is",Warsaw,single
+"Sebastian has a sister and now lives in Poland and has traveled to China , Indonesia and Finland . The capital of Sebastian's country is",Warsaw,single
+"Joe has a sister , played basketball and now lives in Poland and has travelled to Helsinki , Paris and Santiago . The capital of Joe's country is",Warsaw,single
+"Rowan has a sister , played basketball , sang in a choir and now lives in Poland and has travelled to Santiago , Paris and Helsinki . The capital of Rowan's country is",Warsaw,single
+"Jack has a sister , played basketball and now lives in Poland and has travelled to Beijing and Jakarta . The capital of Jack's country is",Warsaw,single
+"Joe has a sister and now lives in Poland and has travelled to Jakarta , Santiago and Beijing . The capital of Joe's country is",Warsaw,single
+"Joe has a sister and now lives in Poland and has travelled to Jakarta , Paris and Beijing . The capital of Joe's country is",Warsaw,single
+"Sebastian has a sister and now lives in Poland and has traveled to Chile , France and Indonesia . The capital of Sebastian's country is",Warsaw,single
+"Jack has a sister , played basketball and now lives in Poland and has traveled to Finland , Chile and Indonesia . The capital of Jack's country is",Warsaw,single
+"Joe has a sister , played basketball and now lives in Poland and has travelled to Helsinki and Jakarta . The capital of Joe's country is",Warsaw,single
+"Rowan has a sister , played basketball , sang in a choir and now lives in Poland and has traveled to France and Chile . The capital of Rowan's country is",Warsaw,single
+"Daniel has a sister , played basketball , sang in a choir and now lives in Poland and has travelled to Helsinki , Beijing and Paris . The capital of Daniel's country is",Warsaw,single
+"Rowan has a sister and now lives in Poland and has travelled to Helsinki , Jakarta and Paris . The capital of Rowan's country is",Warsaw,single
+"John has a sister , played basketball , sang in a choir and now lives in Poland and has travelled to Beijing , Paris and Helsinki . The capital of John's country is",Warsaw,single
+"Daniel has a sister , played basketball , sang in a choir and now lives in Poland and has travelled to Santiago , Helsinki and Beijing . The capital of Daniel's country is",Warsaw,single
+"Joe has a sister , played basketball , sang in a choir and now lives in Poland and has travelled to Paris . The capital of Joe's country is",Warsaw,single
+Joe has a sister and now lives in Poland and has travelled to Jakarta and Beijing . The capital of Joe's country is,Warsaw,single
+"daniel has a sister , played basketball , and visited the eiffel tower and has friends in italy . the country daniel traveled to was",France,single
+"joe visited the eiffel tower and wants to visit the pyramid of giza , the machu picchu , and the taj mahal . the country joe traveled to was",France,single
+"john has a sister , played basketball , sang in a choir , and visited the eiffel tower and has friends in italy and peru . the country john traveled to was",France,single
+"sebastian has a sister , played basketball , sang in a choir , and visited the eiffel tower and has friends in india . the country sebastian traveled to was",France,single
+"rowan has a sister , played basketball , and visited the eiffel tower and wants to visit the tower of pisa . the country rowan traveled to was",France,single
+"jake has a sister , played basketball , sang in a choir , and visited the eiffel tower and wants to visit the taj mahal , the machu picchu , and the tower of pisa . the country jake traveled to was",France,single
+"daniel visited the eiffel tower and has friends in russia , peru , and egypt . the country daniel traveled to was",France,single
+"jack visited the eiffel tower and has friends in egypt , india , and italy . the country jack traveled to was",France,single
+"john has a sister , played basketball , sang in a choir , and visited the eiffel tower and wants to visit the tower of pisa , the pyramid of giza , and the kremlin . the country john traveled to was",France,single
+"john visited the eiffel tower and wants to visit the machu picchu , the taj mahal , and the pyramid of giza . the country john traveled to was",France,single
+"sebastian has a sister , played basketball , sang in a choir , and visited the eiffel tower and wants to visit the machu picchu . the country sebastian traveled to was",France,single
+"joe has a sister , played basketball , and visited the eiffel tower and wants to visit the taj mahal and the kremlin . the country joe traveled to was",France,single
+jack has a sister and visited the eiffel tower and wants to visit the machu picchu and the pyramid of giza . the country jack traveled to was,France,single
+"jack has a sister and visited the eiffel tower and has friends in italy , india , and russia . the country jack traveled to was",France,single
+"john has a sister , played basketball , and visited the eiffel tower and has friends in italy and peru . the country john traveled to was",France,single
+"joe visited the eiffel tower and has friends in italy , peru , and india . the country joe traveled to was",France,single
+"daniel has a sister , played basketball , sang in a choir , and visited the eiffel tower and has friends in italy . the country daniel traveled to was",France,single
+"sebastian has a sister , played basketball , sang in a choir , and visited the eiffel tower and wants to visit the pyramid of giza . the country sebastian traveled to was",France,single
+"jake visited the eiffel tower and wants to visit the taj mahal , the pyramid of giza , and the machu picchu . the country jake traveled to was",France,single
+"joe visited the eiffel tower and wants to visit the machu picchu , the taj mahal , and the tower of pisa . the country joe traveled to was",France,single
+"joe has a sister , played basketball , sang in a choir , and visited the eiffel tower and wants to visit the taj mahal and machu picchu . the country joe traveled to was",France,single
+jack visited the eiffel tower and wants to visit the taj mahal and the tower of pisa . the country jack traveled to was,France,single
+"jake visited the eiffel tower and has friends in peru , italy , and egypt . the country jake traveled to was",France,single
+sebastian has a sister and visited the eiffel tower and wants to visit the pyramid of giza and the taj mahal . the country sebastian traveled to was,France,single
+"sebastian has a sister , played basketball , sang in a choir , and visited the eiffel tower and wants to visit the pyramid of giza and taj mahal . the country sebastian traveled to was",France,single
+daniel has a sister and visited the tower of pisa and wants to visit the pyramid of giza and the taj mahal . the country daniel traveled to was,Italy,single
+"jake has a sister , played basketball , sang in a choir , and visited the tower of pisa and has friends in india . the country jake traveled to was",Italy,single
+rowan visited the tower of pisa and wants to visit the taj mahal and the kremlin . the country rowan traveled to was,Italy,single
+"john has a sister , played basketball , and visited the tower of pisa and wants to visit the pyramid of giza and the machu picchu . the country john traveled to was",Italy,single
+"john has a sister , played basketball , sang in a choir , and visited the tower of pisa and wants to visit the taj mahal and eiffel tower . the country john traveled to was",Italy,single
+sebastian has a sister and visited the tower of pisa and wants to visit the eiffel tower and the machu picchu . the country sebastian traveled to was,Italy,single
+joe visited the tower of pisa and wants to visit the eiffel tower . the country joe traveled to was,Italy,single
+"john has a sister and visited the tower of pisa and wants to visit the machu picchu , the taj mahal , and the kremlin . the country john traveled to was",Italy,single
+"daniel has a sister , played basketball , sang in a choir , and visited the tower of pisa and has friends in egypt . the country daniel traveled to was",Italy,single
+jack has a sister and visited the tower of pisa and wants to visit the pyramid of giza . the country jack traveled to was,Italy,single
+"jack visited the tower of pisa and wants to visit the taj mahal , the machu picchu , and the kremlin . the country jack traveled to was",Italy,single
+john has a sister and visited the tower of pisa and wants to visit the machu picchu and the taj mahal . the country john traveled to was,Italy,single
+"sebastian has a sister , played basketball , and visited the tower of pisa and wants to visit the pyramid of giza , the machu picchu , and the taj mahal . the country sebastian traveled to was",Italy,single
+"john has a sister , played basketball , sang in a choir , and visited the tower of pisa and wants to visit the machu picchu and taj mahal . the country john traveled to was",Italy,single
+"sebastian has a sister , played basketball , sang in a choir , and visited the tower of pisa and wants to visit the pyramid of giza , the machu picchu , and the taj mahal . the country sebastian traveled to was",Italy,single
+"sebastian has a sister , played basketball , and visited the tower of pisa and wants to visit the taj mahal , the pyramid of giza , and the kremlin . the country sebastian traveled to was",Italy,single
+"jack has a sister , played basketball , and visited the tower of pisa and wants to visit the machu picchu , the eiffel tower , and the pyramid of giza . the country jack traveled to was",Italy,single
+"sebastian has a sister and visited the tower of pisa and wants to visit the pyramid of giza , the taj mahal , and the kremlin . the country sebastian traveled to was",Italy,single
+"john has a sister , played basketball , and visited the tower of pisa and wants to visit the taj mahal , the kremlin , and the machu picchu . the country john traveled to was",Italy,single
+"joe visited the tower of pisa and wants to visit the taj mahal , the eiffel tower , and the machu picchu . the country joe traveled to was",Italy,single
+rowan has a sister and visited the tower of pisa and wants to visit the taj mahal . the country rowan traveled to was,Italy,single
+"sebastian has a sister , played basketball , and visited the tower of pisa and wants to visit the pyramid of giza , the eiffel tower , and the taj mahal . the country sebastian traveled to was",Italy,single
+"daniel has a sister , played basketball , sang in a choir , and visited the tower of pisa and has friends in egypt and peru . the country daniel traveled to was",Italy,single
+"john has a sister , played basketball , and visited the tower of pisa and wants to visit the taj mahal , the machu picchu , and the pyramid of giza . the country john traveled to was",Italy,single
+"john has a sister , played basketball , and visited the tower of pisa and wants to visit the machu picchu and the taj mahal . the country john traveled to was",Italy,single
+"jake has a sister , played basketball , sang in a choir , and visited the eiffel tower , jack visited india , joe visited peru , and sebastian visited egypt . the country jake traveled to was",France,mulit
+"jake has a sister , played basketball , sang in a choir , and visited the eiffel tower , jack visited peru , sebastian visited egypt , and rowan visited russia . the country jake traveled to was",France,mulit
+"jake has a sister , played basketball , sang in a choir , and visited the machu picchu , jack visited france , daniel visited india , and rowan visited italy . the country jake traveled to was",Peru,mulit
+"jack has a sister , played basketball , sang in a choir , and visited the tower of pisa , daniel visited egypt , rowan visited india , and sebastian visited peru . the country jack traveled to was",Italy,mulit
+"jake has a sister , played basketball , and visited the kremlin , jack visited peru , joe visited egypt , and rowan visited france . the country jake traveled to was",Russia,mulit
+"jake has a sister , played basketball , sang in a choir , and visited the kremlin , jack visited peru , joe visited egypt , and rowan visited france . the country jake traveled to was",Russia,mulit
+"jake has a sister , played basketball , and visited the machu picchu and jack visited the pyramid of giza . the country jake traveled to was",Peru,mulit
+"jake has a sister , played basketball , sang in a choir , and visited the machu picchu and jack visited the pyramid of giza . the country jake traveled to was",Peru,mulit
+"jake has a sister , played basketball , and visited the kremlin and jack visited the tower of pisa . the country jake traveled to was",Russia,mulit
+"jake has a sister , played basketball , sang in a choir , and visited the kremlin and jack visited the tower of pisa . the country jake traveled to was",Russia,mulit
+"sebastian has a sister , played basketball , and visited the kremlin , daniel visited the pyramid of giza , and john visited the machu picchu . the country sebastian traveled to was",Russia,mulit
+"jake has a sister , played basketball , and visited the eiffel tower , jack visited the pyramid of giza , joe visited the kremlin , and rowan visited the tower of pisa . the country jake traveled to was",France,mulit
+"jake has a sister , played basketball , sang in a choir , and visited the eiffel tower , jack visited the tower of pisa , joe visited the taj mahal , and john visited the pyramid of giza . the country jake traveled to was",France,mulit
+"jake has a sister , played basketball , sang in a choir , and visited the machu picchu , jack visited the kremlin , daniel visited the taj mahal , and rowan visited the tower of pisa . the country jake traveled to was",Peru,mulit
+"jake has a sister , played basketball , sang in a choir , and visited the tower of pisa , jack visited the eiffel tower , daniel visited the pyramid of giza , and john visited the machu picchu . the country jake traveled to was",Italy,mulit
+"sebastian has a sister , played basketball , and visited the kremlin , john visited the taj mahal , jake visited the pyramid of giza , and daniel visited the machu picchu . the country sebastian traveled to was",Russia,mulit
+"sebastian has a sister , played basketball , sang in a choir , and visited the kremlin , john visited the taj mahal , jake visited the pyramid of giza , and daniel visited the machu picchu . the country sebastian traveled to was",Russia,mulit
